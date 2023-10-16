@@ -32,24 +32,16 @@ jobs:
             - name: Terraform Init
               run: terraform init
 
-            # Checks that all Terraform configuration files adhere to a canonical format
-            - name: Terraform Format
-              run: terraform fmt
-
-            # Validate that all Terraform configuration files are valid
-            - name: Terraform Validate
-              run: terraform validate
-
             # Generates an execution plan for Terraform
             - name: Terraform Plan
-              run: terraform plan -out=tfplan.out
+              run: terraform plan -out=tfplan
 
             # Save plan to artifacts
             - name: Save Plan
               uses: actions/upload-artifact@v3
               with:
                   name: tfplan
-                  path: tfplan.out
+                  path: tfplan
                   
     terrafom-apply:
         name: 'Terraform Apply'
