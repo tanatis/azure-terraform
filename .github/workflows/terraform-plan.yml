@@ -33,7 +33,7 @@ jobs:
 
     # Save terraform plan
     - name: Archive Terraform Plan
-      uses: actions/upload_artefact@v2
+      uses: actions/upload_artifact@v2
       with: 
         name: tfplan
         path: tfplan.out 
