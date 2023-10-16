@@ -70,10 +70,10 @@ jobs:
               run: terraform init
 
             # Download saved plan from artifacts
-            - name: Download Plan
+            - name: Download Terraform Plan Artifact
               uses: actions/download-artifact@v3
               with:
-                  name: tfplan
+                name: tfplan
 
             # Terraform apply
             - name: Terraform Apply
